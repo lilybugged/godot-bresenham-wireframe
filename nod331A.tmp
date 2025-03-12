@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://ci5o5kt7w8khj"]
+
+[ext_resource type="Script" path="res://node_3d.gd" id="1_wvwep"]
+[ext_resource type="Material" uid="uid://cwwfqfuet2gvb" path="res://wireframe_mat.tres" id="5_2n5lp"]
+[ext_resource type="ArrayMesh" uid="uid://dj0qrlx8oigcb" path="res://Cube_002.res" id="5_hq1vo"]
+[ext_resource type="Script" path="res://bresenham_plus_culled_all.gd" id="6_7xsgo"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7t6ax"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d3kns"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7wcb3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y2pvb"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_wvwep")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39259, 0, 3.71205)
+current = true
+
+[node name="Node3D4" type="Node2D" parent="." node_paths=PackedStringArray("target_meshes")]
+script = ExtResource("6_7xsgo")
+target_meshes = [NodePath("../MeshInstance3D3"), NodePath("../MeshInstance3D"), NodePath("../MeshInstance3D4")]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.837572, 0.545952, -0.0202289, -0.429918, -0.681501, -0.592222, -0.337111, -0.487332, 0.805521, -0.732002, 1.30824, 0)
+mesh = SubResource("CylinderMesh_7t6ax")
+surface_material_override/0 = ExtResource("5_2n5lp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d3kns")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.065, 0, 0, 0, 2.065, 0, 0, 0, 2.065, 0, 0, 0)
+mesh = SubResource("SphereMesh_7wcb3")
+surface_material_override/0 = ExtResource("5_2n5lp")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="MeshInstance3D4"]
+transform = Transform3D(1.00969, 0, 0, 0, 1.00969, 0, 0, 0, 1.00969, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D2"]
+shape = SubResource("SphereShape3D_y2pvb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(107.87, 0, 0, 0, 107.87, 0, 0, 0, 107.87, -1.34831, 0, 0)
+mesh = ExtResource("5_hq1vo")

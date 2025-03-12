@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci5o5kt7w8khj"]
+
+[ext_resource type="Script" path="res://node_3d.gd" id="1_wvwep"]
+[ext_resource type="ArrayMesh" uid="uid://cvssneepbolx8" path="res://cube.obj" id="3_guivu"]
+[ext_resource type="Script" path="res://bresenham_plus.gd" id="4_erib5"]
+[ext_resource type="Material" uid="uid://cwwfqfuet2gvb" path="res://wireframe_mat.tres" id="5_2n5lp"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_wvwep")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39259, 0, 3.71205)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.956386, 0.205454, -0.207639, 0.259625, -0.923646, 0.28191, -0.133865, -0.323523, -0.936703, 0, 0, 0)
+mesh = ExtResource("3_guivu")
+surface_material_override/0 = ExtResource("5_2n5lp")
+
+[node name="Node3D2" type="Node2D" parent="MeshInstance3D3" node_paths=PackedStringArray("target_mesh")]
+position = Vector2(-0.733361, 0)
+scale = Vector2(1.0101, 1.0101)
+script = ExtResource("4_erib5")
+target_mesh = NodePath("..")

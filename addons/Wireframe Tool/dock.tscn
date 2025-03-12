@@ -1,0 +1,222 @@
+[gd_scene load_steps=3 format=3 uid="uid://4klolpdlp4ml"]
+
+[ext_resource type="Script" path="res://addons/Wireframe Tool/dock.gd" id="1_cq4s8"]
+[ext_resource type="ButtonGroup" uid="uid://dpsauvexao48g" path="res://addons/Wireframe Tool/new_button_group.tres" id="1_qqgwb"]
+
+[node name="WFT" type="ScrollContainer"]
+offset_right = 444.0
+offset_bottom = 588.0
+script = ExtResource("1_cq4s8")
+
+[node name="vbox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="lblChooseSur" type="Label" parent="vbox"]
+layout_mode = 2
+text = "Target Mesh/Surface"
+
+[node name="hboxSur1" type="HBoxContainer" parent="vbox"]
+layout_mode = 2
+
+[node name="btnTMesh" type="OptionButton" parent="vbox/hboxSur1"]
+layout_mode = 2
+disabled = true
+toggle_mode = false
+
+[node name="btnTSur" type="OptionButton" parent="vbox/hboxSur1"]
+layout_mode = 2
+disabled = true
+toggle_mode = false
+
+[node name="hboxSur2" type="HBoxContainer" parent="vbox"]
+layout_mode = 2
+
+[node name="btnRenameS" type="Button" parent="vbox/hboxSur2"]
+layout_mode = 2
+disabled = true
+text = "Rename surf."
+
+[node name="txtedSurName" type="LineEdit" parent="vbox/hboxSur2"]
+layout_mode = 2
+
+[node name="btnRenameOk" type="Button" parent="vbox/hboxSur2"]
+layout_mode = 2
+disabled = true
+text = "OK"
+
+[node name="btnDeleteS" type="Button" parent="vbox/hboxSur2"]
+layout_mode = 2
+disabled = true
+text = "Delete surf."
+
+[node name="lblCopySur" type="Label" parent="vbox"]
+layout_mode = 2
+text = "Source Mesh/Surface"
+
+[node name="hboxSur3" type="HBoxContainer" parent="vbox"]
+layout_mode = 2
+
+[node name="btnSMesh" type="OptionButton" parent="vbox/hboxSur3"]
+layout_mode = 2
+disabled = true
+toggle_mode = false
+
+[node name="btnSSur" type="OptionButton" parent="vbox/hboxSur3"]
+layout_mode = 2
+disabled = true
+toggle_mode = false
+clip_text = true
+
+[node name="btnCopyS" type="Button" parent="vbox/hboxSur3"]
+layout_mode = 2
+disabled = true
+text = "Copy"
+
+[node name="sep1" type="HSeparator" parent="vbox"]
+layout_mode = 2
+
+[node name="lblWFTools" type="Label" parent="vbox"]
+layout_mode = 2
+text = "Wireframe Tools"
+
+[node name="hboxWFT" type="HBoxContainer" parent="vbox"]
+layout_mode = 2
+
+[node name="btnGenerate" type="Button" parent="vbox/hboxWFT"]
+layout_mode = 2
+disabled = true
+toggle_mode = true
+text = "Generate"
+
+[node name="btnCommit" type="Button" parent="vbox/hboxWFT"]
+layout_mode = 2
+disabled = true
+toggle_mode = true
+text = "Commit"
+
+[node name="btnCancel" type="Button" parent="vbox/hboxWFT"]
+layout_mode = 2
+disabled = true
+toggle_mode = true
+text = "Cancel"
+
+[node name="lblSelTools" type="Label" parent="vbox"]
+layout_mode = 2
+text = "Selection Tools"
+
+[node name="group" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(50, 75)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="vbox/group"]
+layout_mode = 0
+columns = 3
+
+[node name="btnNone" type="Button" parent="vbox/group/GridContainer"]
+layout_mode = 2
+disabled = true
+toggle_mode = true
+button_group = ExtResource("1_qqgwb")
+text = "None"
+
+[node name="btnVertex" type="Button" parent="vbox/group/GridContainer"]
+layout_mode = 2
+disabled = true
+toggle_mode = true
+button_group = ExtResource("1_qqgwb")
+text = "Vertex"
+
+[node name="btnEdge" type="Button" parent="vbox/group/GridContainer"]
+layout_mode = 2
+disabled = true
+toggle_mode = true
+button_group = ExtResource("1_qqgwb")
+text = "Edge"
+
+[node name="btnLoop" type="Button" parent="vbox/group/GridContainer"]
+layout_mode = 2
+disabled = true
+toggle_mode = true
+button_group = ExtResource("1_qqgwb")
+text = "Loop"
+
+[node name="btnAll" type="Button" parent="vbox/group/GridContainer"]
+layout_mode = 2
+disabled = true
+toggle_mode = true
+button_group = ExtResource("1_qqgwb")
+text = "All"
+
+[node name="btnInverse" type="Button" parent="vbox/group/GridContainer"]
+layout_mode = 2
+disabled = true
+toggle_mode = true
+button_group = ExtResource("1_qqgwb")
+text = "Inverse"
+
+[node name="lblActions" type="Label" parent="vbox"]
+layout_mode = 2
+text = "Actions"
+
+[node name="gridActions" type="HBoxContainer" parent="vbox"]
+layout_mode = 2
+
+[node name="btnDelete" type="Button" parent="vbox/gridActions"]
+layout_mode = 2
+disabled = true
+text = "Delete"
+
+[node name="btnColor" type="Button" parent="vbox/gridActions"]
+layout_mode = 2
+disabled = true
+text = "Color"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="vbox/gridActions"]
+layout_mode = 2
+disabled = true
+toggle_mode = false
+color = Color(1, 1, 1, 1)
+
+[node name="lblShaders" type="Label" parent="vbox"]
+layout_mode = 2
+text = "Materials"
+
+[node name="hboxMaterials" type="HBoxContainer" parent="vbox"]
+layout_mode = 2
+
+[node name="btnUnlit" type="Button" parent="vbox/hboxMaterials"]
+layout_mode = 2
+disabled = true
+text = "Unlit"
+
+[node name="btnLit" type="Button" parent="vbox/hboxMaterials"]
+layout_mode = 2
+disabled = true
+text = "Lit"
+
+[node name="btnOutline" type="Button" parent="vbox/hboxMaterials"]
+layout_mode = 2
+disabled = true
+text = "Outl."
+
+[node name="btnOccluder" type="Button" parent="vbox/hboxMaterials"]
+layout_mode = 2
+text = "Occl."
+
+[node name="sep2" type="HSeparator" parent="vbox"]
+layout_mode = 2
+
+[node name="btnHelp" type="Button" parent="vbox"]
+layout_mode = 2
+text = "Show help"
+
+[node name="lblWarning" type="Label" parent="vbox"]
+layout_mode = 2
+text = "Warnings:"
+
+[node name="sep3" type="HSeparator" parent="vbox"]
+layout_mode = 2
+
+[node name="lblVertex" type="Label" parent="vbox"]
+layout_mode = 2
+text = "Vertex Cloud Tool"

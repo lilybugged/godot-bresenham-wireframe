@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d5nuqskaecka"]
+
+[ext_resource type="PackedScene" uid="uid://cq8hjwuuopr1q" path="res://tiles.glb" id="1_xlpv8"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="tiles" parent="." instance=ExtResource("1_xlpv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214683, 0.311975, -0.493869)
