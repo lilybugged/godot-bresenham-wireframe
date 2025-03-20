@@ -19,7 +19,3 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/Wireframe Tool/plugin.cfg")

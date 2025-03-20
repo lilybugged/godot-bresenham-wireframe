@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci5o5kt7w8khj"]
+
+[ext_resource type="Script" path="res://node_3d.gd" id="1_wvwep"]
+[ext_resource type="Script" path="res://bresenham_write.gd" id="2_cp6be"]
+[ext_resource type="Material" uid="uid://cwwfqfuet2gvb" path="res://wireframe_mat.tres" id="5_2n5lp"]
+[ext_resource type="ArrayMesh" uid="uid://dj0qrlx8oigcb" path="res://Cube_002.res" id="5_hq1vo"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_81445"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7wcb3"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_wvwep")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39259, 0, 3.71205)
+current = true
+
+[node name="Node3D4" type="Node2D" parent="." node_paths=PackedStringArray("target_mesh")]
+script = ExtResource("2_cp6be")
+target_mesh = NodePath("../MeshInstance3D3")
+image_size = null
+output_path = null
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.837572, 0.545952, -0.0202289, -0.52728, -0.817508, -0.231641, -0.143002, -0.18335, 0.972591, -0.732002, 1.30824, 0)
+mesh = SubResource("TorusMesh_81445")
+surface_material_override/0 = ExtResource("5_2n5lp")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.065, 0, 0, 0, 2.065, 0, 0, 0, 2.065, 0, 0, 0)
+mesh = SubResource("SphereMesh_7wcb3")
+surface_material_override/0 = ExtResource("5_2n5lp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(107.87, 0, 0, 0, 107.87, 0, 0, 0, 107.87, -1.34831, 0, 0)
+mesh = ExtResource("5_hq1vo")
